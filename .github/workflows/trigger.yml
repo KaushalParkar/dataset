@@ -19,10 +19,10 @@ jobs:
         with:
           creds: |
             {
-              "clientId": "${{ secrets.AZURE_CLIENT_ID }}",
-              "clientSecret": "${{ secrets.AZURE_CLIENT_SECRET }}",
-              "subscriptionId": "${{ secrets.AZURE_SUBSCRIPTION_ID }}",
-              "tenantId": "${{ secrets.AZURE_TENANT_ID }}"
+              "clientId": "faac711e-1c94-4146-89d8-21cc6d40690c",
+              "clientSecret": "d5850940-a23c-4bbf-9057-8199d59308eb",
+              "subscriptionId": "77892da6-e6e9-4eb6-b2ce-c5f8726817a8",
+              "tenantId": "d5850940-a23c-4bbf-9057-8199d59308eb"
             }
 
       - name: Trigger Azure Data Factory Pipeline
