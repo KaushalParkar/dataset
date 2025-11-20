@@ -35,6 +35,13 @@ jobs:
 
           echo "Pipeline triggered successfully!"
 
+      - name: Send Slack Notification
+        if: success()
+        run: |
+          curl -X POST -H 'Content-type: application/json' \
+            --data '{"text":"✅ Azure Data Factory Pipeline `CryptoCurrencyDataImporeter` has been triggered successfully!\n*Repository:* ${{ github.repository }}\n*Branch:* ${{ github.ref_name }}\n*Commit:* ${{ github.sha }}\n*Triggered by:* ${{ github.actor }}"}' \
+            ${{ secrets.SLACK_WEBHOOK_URL }}
+
       - name: Azure Logout
         if: always()
         run: az logout
